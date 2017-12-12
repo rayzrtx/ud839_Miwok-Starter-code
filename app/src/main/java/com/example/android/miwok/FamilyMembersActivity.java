@@ -11,7 +11,7 @@ public class FamilyMembersActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_family_members);
+        setContentView(R.layout.word_list);
 
         //Create an ArrayList of words to display when Family Members category is clicked
         ArrayList<Word> words = new ArrayList<>();
@@ -32,7 +32,7 @@ public class FamilyMembersActivity extends AppCompatActivity {
 
         // Find the {@link ListView} object in the view hierarchy of the {@link Activity}.
         // There should be a {@link ListView} with the view ID called list, which is declared in the
-        // activity_family_members.xml layout file.
+        // word_list.xml layout file.
         ListView listView = (ListView) findViewById(R.id.list);
 
         // Make the {@link ListView} use the {@link WordAdapter} we created above, so that the

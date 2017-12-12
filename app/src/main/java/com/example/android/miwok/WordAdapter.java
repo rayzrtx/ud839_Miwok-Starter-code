@@ -57,7 +57,7 @@ public class WordAdapter extends ArrayAdapter<Word> {
         defaultTextView.setText(currentWord.getDefaultTranslation());
 
         // Return the whole list item layout (containing 2 TextViews) so that it can be shown in
-        // the ListView in activity_numbers.
+        // the ListView in word_list.
         return view;
     }
 }
