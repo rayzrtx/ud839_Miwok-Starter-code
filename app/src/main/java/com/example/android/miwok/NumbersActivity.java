@@ -18,7 +18,7 @@ public class NumbersActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_numbers);
 
-        //Create an ArrayList of words
+        //Create an ArrayList of words to display when Numbers category is clicked
         ArrayList<Word> words = new ArrayList<>();
         words.add(new Word("one", "lutti"));
         words.add(new Word("two", "otiiko"));
