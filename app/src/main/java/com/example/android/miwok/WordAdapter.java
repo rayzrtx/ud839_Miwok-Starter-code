@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -56,7 +57,20 @@ public class WordAdapter extends ArrayAdapter<Word> {
         // the default TextView.
         defaultTextView.setText(currentWord.getDefaultTranslation());
 
-        // Return the whole list item layout (containing 2 TextViews) so that it can be shown in
+        // Find the ImageView in the list_item.xml layout with the ID list_item_icon
+        ImageView imageView = (ImageView) view.findViewById(R.id.list_item_icon);
+
+        if (currentWord.hasImage()) {
+            // Set the ImageView to the image resource specified in the current Word
+            imageView.setImageResource(currentWord.getImageResourceId());
+            // Make sure the view is visible in case view is reused
+            imageView.setVisibility(View.VISIBLE);
+        } else {
+            //Otherwise hide the visibility of the ImageView
+            imageView.setVisibility(View.GONE);
+        }
+
+        // Return the whole list item layout (containing 2 TextViews and possibly an ImageView) so that it can be shown in
         // the ListView in word_list.
         return view;
     }

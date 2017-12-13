@@ -10,13 +10,15 @@ package com.example.android.miwok;
  */
 public class Word {
 
-    private int mImageResourceId;
+    private int mImageResourceId = NO_IMAGE_PROVIDED;
 
     /** Default translation for the word */
     private String mDefaultTranslation;
 
     /** Miwok translation for the word */
     private String mMiwokTranslation;
+
+    private static final int NO_IMAGE_PROVIDED = -1;
 
     /**
      * Create a new Word object.
@@ -63,5 +65,14 @@ public class Word {
 
     public int getImageResourceId(){
         return mImageResourceId;
+    }
+
+    /**
+     * Returns whether or not there is an image.
+     * If true, then mImageResourceId was replaced by the id of an image in constructor.
+     */
+    public boolean hasImage(){
+        return mImageResourceId != NO_IMAGE_PROVIDED;
+
     }
 }
